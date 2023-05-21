@@ -6,8 +6,14 @@ $output = '';
 
 if (isset( $_POST['length'])){
   function passGen(){
-    $letters = ['abcdefghi'];
-    $char = $letters[0][0];
+    $chars = [
+      'abcdefghilmnopqrstuvz',
+      'ABCDEFGHILMNOPQRSTUVZ',
+      '123456789',
+      '!?&%$<>^+-*/()[]{}@#_=' 
+    ];
+
+    $char = $chars[1][5];
     return $char;
   }
   $output = passGen();
