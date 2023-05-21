@@ -16,7 +16,20 @@
 </head>
 <body>
   <div class="container">
-    <h1>Password Generator</h1>
+    <h1 class="my-5">Password Generator</h1>
+    
+    <form action="index.php" method="POST">
+      <div class="mb-3">
+        <label for="length" class="form-label">Numero Caratteri</label>
+        <input type="number" class="form-control" id="length">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <h1 class="my-5">La password generata è XXXXX</h1>
+
+
   </div>
 </body>
 </html>
