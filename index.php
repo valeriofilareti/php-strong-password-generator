@@ -5,18 +5,26 @@ $output = '';
 
 
 if (isset( $_POST['length'])){
-  function passGen(){
+  function passGen($length){
     $chars = [
       'abcdefghilmnopqrstuvz',
       'ABCDEFGHILMNOPQRSTUVZ',
       '123456789',
       '!?&%$<>^+-*/()[]{}@#_=' 
     ];
-
-    $char = $chars[1][5];
-    return $char;
+    $counter = 0;
+    $psw = '';
+    for($i = 0; $i < $length; $i++) {
+      $char = $chars[$counter] [  rand  (0, strlen($chars[$counter]))  ];
+      $psw .= $char;
+      $counter++;
+      if($counter > 3){
+        $counter = 0;
+      }
+    }
+    return $psw;
   }
-  $output = passGen();
+  $output = passGen($length);
 }
 
 
