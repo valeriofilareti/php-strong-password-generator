@@ -1,5 +1,18 @@
 <?php 
 
+$length = $_POST['length'];
+$output = '';
+
+
+if (isset( $_POST['length'])){
+  function passGen(){
+    $letters = ['abcdefghi'];
+    $char = $letters[0][0];
+    return $char;
+  }
+  $output = passGen();
+}
+
 
 
 ?>
@@ -21,13 +34,13 @@
     <form action="index.php" method="POST">
       <div class="mb-3">
         <label for="length" class="form-label">Numero Caratteri</label>
-        <input type="number" class="form-control" id="length">
+        <input name="length" type="number" class="form-control" id="length">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
 
-    <h1 class="my-5">La password generata è XXXXX</h1>
+    <h1 class="my-5">La password generata è <?php echo $output ?> </h1>
 
 
   </div>
